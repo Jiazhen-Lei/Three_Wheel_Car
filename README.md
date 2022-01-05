@@ -1,6 +1,6 @@
 # Three_Wheel_Car
 
-**Designer：Jiazhen-Lei & Zhao-GY**
+**Designer：Jiazhen-Lei & ZhaoGY-N**
 
 ### 硬件设计
 
