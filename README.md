@@ -27,16 +27,13 @@
 * 作为从机，上电即运行，IWDG用于防止程序卡死，而自动复位；
 
 #### 结构示意图
-
-
+![1](https://user-images.githubusercontent.com/68833848/148190832-4bd9e94a-6298-4267-babe-0eb34d612c4d.png)
 
 #### 激光单元电路板（使用Altium Designer 20设计）
-
-
+![电路板](https://user-images.githubusercontent.com/68833848/148190855-658faaca-5004-4289-a1fd-58b38bef718f.jpg)
 
 #### 三轮小车结构设计（使用SolidWorks2018设计）
-
-
+![SW图](https://user-images.githubusercontent.com/68833848/148190866-ec4e1771-56b6-4196-80d8-d2f6965b87f5.png)
 
 ### 软件设计
 
@@ -55,7 +52,7 @@
 * 采用**时间片轮询思想**，利用TIMER1产生Systick自加，对不同的频率需求的模式进行轮询标志位控制。对需求较高PID进行4KHz定时，而对四种模式的控制精度选择200Hz的定时轮询标志位，当接收到该模式标志位置1时，进行相应进程，对于蓝牙收发包进行20Hz轮询，LED交替闪烁进行8Hz翻转；
 
 * 核心控制单元与激光单元之间采用自定数据报通信，具体协议格式如下：                 
-
+![激光板协议](https://user-images.githubusercontent.com/68833848/148190894-4ea8a60e-ed89-4ea9-b2bf-38242a26728b.png)
 
 从机激光单元可以串接以满足项目所需，可扩展性强，通过硬件三态门作为收发转换器调节DATA数据总线上的接收发送状态，不同发送单元通过数据报中ID号进行区分和应答。
 
@@ -78,14 +75,11 @@
 * 根据本次项目当前所需，串口USART1始终工作在发送模式，通过定时器定时20ms进行距离数值的串口发送给核心控制单元；
 
 #### 文件结构图
-
-
+![文件结构](https://user-images.githubusercontent.com/68833848/148190918-ca62c85b-a80d-4541-a606-8940ac65475d.png)
 
 #### 单片机流程图
-
-
-
-
+![单片机流程图1](https://user-images.githubusercontent.com/68833848/148190930-f182e6e6-adb0-499f-880a-ca4d22a9ad4c.png)
 
 ### 上位机
+![上位机](https://user-images.githubusercontent.com/68833848/148190959-7b4b784f-dd3a-4d43-9836-546ee50e0a37.jpg)
 
